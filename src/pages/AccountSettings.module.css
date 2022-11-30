@@ -1,0 +1,9 @@
+.accountSettings  h2 {
+	margin-bottom: 0
+}
+.accountSettings button {
+	width: max-content !important;
+}
+.divider {
+	margin-top: 2rem;
+}

@@ -13,8 +13,9 @@ Live preview and test: https://foodly-b4352.web.app/<br>
 * Responsive, mobile-friendly, and fast user interface.
 * Menu filter system via URL search parameters.
 * Cart and Checkout system.
-* User Authentication system.
+* User authentication system.
 * Account page with order history.
+* Account settings page to delete order history, change password, and delete account.
 <br><br>
 
 # Tech stack

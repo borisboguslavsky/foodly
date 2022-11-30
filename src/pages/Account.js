@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+import ProtectedRoute from "../components/ProtectedRoute";
 import Card from "../components/UI/Card";
-import ChangePasswordForm from "../forms/ChangePasswordForm";
 import OrderHistoryItem from "../components/OrderHistoryItem";
 
 import classes from './Account.module.css'
@@ -19,6 +19,7 @@ const Account = () => {
 
 	const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
 
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const uid = useSelector(state => state.auth.uid)
@@ -62,14 +63,13 @@ const Account = () => {
 		fetchData();
 	}, [uid, token, email])
 
-	if (!isLoggedIn) return <Navigate to="/login" />
-
-	// TODO: Make separate account settings/actions page
-
 	return(
+	<ProtectedRoute check={isLoggedIn} redirect="/login">
 		<Card 
 			title={`Welcome`}
 			className={classes.accountPage}
+			buttonText="Settings ❯"
+			buttonClickHandler={() => {navigate('/settings')}}
 		>
 			<h2>Order History ({email}):</h2>
 			{isLoading && <p>Fetching recent orders...</p>}
@@ -78,10 +78,8 @@ const Account = () => {
 			{Object.keys(orders).length > 0 && !isLoading && 
 				<ul>{parsedOrders.reverse()}</ul>
 			}
-			<h2>Account Actions:</h2>
-			<hr/>
-			<ChangePasswordForm />
 		</Card>
+	</ProtectedRoute>
 	)
 }
 

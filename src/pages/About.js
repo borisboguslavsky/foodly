@@ -32,7 +32,7 @@ const About = () => {
 					<a href="https://firebase.google.com/docs/hosting" target="_blank">Firebase Hosting</a> for hosting.
 				</li>
 				<li>
-					<a href="https://firebase.google.com/docs/auth" target="_blank">Firebase Auth</a> for basic user authentication.
+					<a href="https://firebase.google.com/docs/auth" target="_blank">Firebase Authentication</a> for basic user authentication.
 				</li>
 			</ul>
 			<p>

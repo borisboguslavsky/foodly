@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
+import ProtectedRoute from '../components/ProtectedRoute';
 import Card from '../components/UI/Card'
 import LoginForm from '../forms/LoginForm';
 
@@ -10,21 +9,17 @@ import LoginForm from '../forms/LoginForm';
  */
 const Login = () => {
 
-	const navigate = useNavigate();
-
-	const userIsRegistering = useSelector(state => state.auth.userIsRegistering)
 	const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
-	
-	useEffect(() => {
-		if (isLoggedIn) navigate('/account', {replace: true})
-	}, [isLoggedIn])
+	const userIsRegistering = useSelector(state => state.auth.userIsRegistering)
 
 	return(
+	<ProtectedRoute check={!isLoggedIn} redirect="/account">
 		<Card 
 			title={`${userIsRegistering ? 'Sign Up' : 'Log In'}`}
 		>
 			<LoginForm />
 		</Card>
+	</ProtectedRoute>
 	)
 }
 

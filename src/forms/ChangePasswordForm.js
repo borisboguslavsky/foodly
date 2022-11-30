@@ -73,7 +73,6 @@ const ChangePasswordForm = () => {
 
 	return(<>
 		<form className={classes.standardForm}>
-			<h2>Change Password:</h2>
 			<div className={classes.formInputWrapper}>
 				<label htmlFor="changepw-newpassword">New Password</label>
 				<input

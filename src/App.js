@@ -8,6 +8,7 @@ import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Account from './pages/Account';
+import AccountSettings from './pages/AccountSettings';
 import About from './pages/About';
 import Footer from './components/UI/Footer';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/settings" element={<AccountSettings />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<MissingPage />}></Route>
         </Routes>

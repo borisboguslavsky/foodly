@@ -1,15 +1,22 @@
-import { Navigate } from "react-router-dom"
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 
 /**
- * @prop {expression} validation - If this expression evluates to true, show the protected route, otherwise redirect 
+ * @prop {expression} check - If this expression evluates to true, show the protected route, otherwise redirect 
  * @prop {string} redirect - where to redirect should expression be false
  */
 const ProtectedRoute = (props) => {
-	if (!props.validation) {
-		return(
-			<Navigate to={`${props.redirect ? props.redirect : '/'}`} />
-		)
-	}
+
+	const navigate = useNavigate();
+
+	// Redirect user if the check fails
+	useEffect(() => {
+		if (!props.check) {
+			navigate(`${props.redirect ? props.redirect : '/'}`, {replace: true})
+		}
+	}, [props.check])
+
+	// Load page content if check is passed
 	return props.children
 }
 
