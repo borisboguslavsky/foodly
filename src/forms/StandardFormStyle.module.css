@@ -23,6 +23,7 @@
 .standardForm input {
 	margin-bottom: 0.5rem;
 	flex-grow: 1;
+	width: max-content;
 }
 .standardForm button {
 	margin-top: 0.5rem;

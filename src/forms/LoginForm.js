@@ -46,7 +46,7 @@ const LoginForm = () => {
 
 			// TODO: Auto-logout not working for some reason
 			setTimeout(() => {
-				authActions.logout() // doesn't works
+				authActions.logout() // doesnt work
 				// console.log('AUTO LOGOUT') // this works
 			}, 3000)
 

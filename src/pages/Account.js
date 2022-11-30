@@ -29,8 +29,6 @@ const Account = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [fetchError, setFetchError] = useState(false);
 
-	const [showChangePassForm, setShowChangePassForm] = useState(false);
-
 	const orders = useSelector(state => state.auth.orders)
 	const parsedOrders = Object.keys(orders).map(key => {
 		// return <p>{JSON.stringify(orders[key])}</p>
@@ -68,10 +66,20 @@ const Account = () => {
 		<Card 
 			title={`Welcome`}
 			className={classes.accountPage}
-			buttonText="Settings ❯"
-			buttonClickHandler={() => {navigate('/settings')}}
+			// buttonText="Settings ❯"
+			// buttonClickHandler={() => {navigate('/settings')}}
 		>
-			<h2>Order History ({email}):</h2>
+			<h2>Account Settings ({email})</h2>
+			<p style={{marginTop: '0'}}>Change your account password, delete your order history, or delete your entire account.</p>
+			<button
+				className="btnDark"
+				style={{width: "fit-content"}}
+				onClick={() => {navigate('/settings')}}
+			>
+				View Account Settings ❯
+			</button>
+			<hr style={{marginTop: '2rem'}} />
+			<h2>Order History:</h2>
 			{isLoading && <p>Fetching recent orders...</p>}
 			{fetchError && <p>{fetchError}</p>}
 			{Object.keys(orders).length === 0 && !isLoading && <p>No recent orders...</p>}

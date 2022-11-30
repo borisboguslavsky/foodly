@@ -1,3 +1,4 @@
+import { json } from "react-router-dom";
 import { firebaseApiKey, databaseUrl } from "../private-data";
 
 export const userLoginOrSignup = async ({
@@ -62,7 +63,7 @@ export const changeUserPassword = async ({
 		},
 	})
 	const data = await response.json();
-	// Response successfuly
+	// Response successful
 	if (response.ok) return data
 	// Some kind of error
 	let errorMessage = (data.error) ? 
@@ -81,10 +82,35 @@ export const deleteOrderHistory = async ({
 
 	const response = await fetch(requestURL, {method: "DELETE" })
 	const data = await response.json();
-	// Response successfuly
+	// Response successful
 	if (response.ok) return data
 	// Some kind of error
 	let errorMessage = (data.error) ? 
 		data.error.message : 'Failed to Delete Orders'
+	throw new Error(errorMessage)
+}
+
+export const deleteAccount = async ({
+	token
+}) => {
+	if (!token) throw new Error('No user token found')
+
+	const requestURL = `https://identitytoolkit.googleapis.com/v1/accounts:delete?key=${firebaseApiKey}`
+
+	const response = await fetch(requestURL, {
+		method: 'POST',
+		body: JSON.stringify({
+			idToken: token
+		}),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	})
+	const data = await response.json()
+	// Response successful
+	if (response.ok) return data
+	// Some kind of error
+	let errorMessage = (data.error) ? 
+		data.error.message : 'Failed to Delete Account'
 	throw new Error(errorMessage)
 }

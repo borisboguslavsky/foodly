@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import classes from './AccountSettings.module.css'
 
@@ -8,13 +9,17 @@ import ProtectedRoute from '../components/ProtectedRoute'
 import ChangePasswordForm from "../forms/ChangePasswordForm";
 import FormSubmissionMessage from "../components/UI/FormSubmissionMessage";
 
-import { deleteOrderHistory } from "../store/auth-actions";
+import { deleteOrderHistory, deleteAccount } from "../store/auth-actions";
+import { authActions } from "../store/auth-slice";
 
 /**
  * Account settings page that lets the user change their password,
  * delete their order history, and delete their account.
  */
 const AccountSettings = () => {
+
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	const isLoggedIn = useSelector(state => state.auth.isLoggedIn)
 	const uid = useSelector(state => state.auth.uid)
@@ -28,8 +33,8 @@ const AccountSettings = () => {
 	const [accountDeletionError, setAccountDeletionError] = useState(false)
 
 	const deleteOrderHistoryHandler = async () => {
+		setCurrentlyDeletingOrders(true)
 		try {
-			setCurrentlyDeletingOrders(true)
 			const result = await deleteOrderHistory({
 				userId: uid,
 				token: token
@@ -42,7 +47,33 @@ const AccountSettings = () => {
 	}
 
 	const deleteAccountHandler = async () => {
+		setCurrentlyDeletingAccount(true)
+		try {
+			await deleteOrderHistoryHandler();
+			const result = await deleteAccount({
+				token: token
+			});
+			setAccountDeletionSuccess(true);
+		} catch(error) {
+			setAccountDeletionError(error.message.replaceAll("_", " ").toLowerCase())
+		}
+		setCurrentlyDeletingAccount(false)
+	}
 
+	useEffect(() => {
+		if (accountDeletionSuccess) dispatch(authActions.logout())
+	}, [accountDeletionSuccess])
+
+	if (accountDeletionSuccess) {
+	return(
+		<Card 
+			title="Account Deleted"
+			buttonText="Home ❯"
+			buttonClickHandler={() => {navigate('/menu')}}
+		>
+			<p>Your account and order history has been successfully deleted.</p>
+		</Card>
+	)
 	}
 
 	return(
@@ -52,7 +83,7 @@ const AccountSettings = () => {
 			<p>Use the form below to change the password for your account.</p>
 			<ChangePasswordForm />
 			<hr className={classes.divider}/>
-			<h2>Clear Order History</h2>
+			<h2>Delete Order History</h2>
 			<p>Permanently delete your entire order history.</p>
 			<FormSubmissionMessage
 				submitSuccess={orderDeletionSuccess}
@@ -77,7 +108,7 @@ const AccountSettings = () => {
 				onClick={deleteAccountHandler}
 				disabled={currentlyDeletingAccount}
 			>
-				{currentlyDeletingAccount ? 'Deleting Account' : 'Delete Account ❯'}
+				{currentlyDeletingAccount ? 'Deleting Account...' : 'Delete Account ❯'}
 			</button>
 		</Card>
 	</ProtectedRoute>
