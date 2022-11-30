@@ -11,7 +11,7 @@
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	/* outline: 2px solid white; */
+	outline: 1px solid white;
 }
 	.filterButton:hover {
 		border: 1px solid var(--red);
@@ -23,7 +23,7 @@
 .filterButton a {
 	width: 100%;
 	height: 100%;
-	padding: 0.5rem 1rem;
+	padding: 0.75rem 1.25rem;
 	font-size: var(--font-size-sm);
 	font-weight: bold;
 	letter-spacing: 0em;

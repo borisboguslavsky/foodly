@@ -13,7 +13,7 @@ const Introduction = () => {
       title="Fresh Food, Delivered Asynchronously"
       className={`${classes.introduction}`}
       // noButton={true}
-      buttonText="About"
+      buttonText="About ❯"
       buttonClickHandler={() => navigate('/about')}
     >
       <p>

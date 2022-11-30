@@ -5,7 +5,7 @@ Foodly is a demo/template Single-Page Web Application for a restaurant, built wi
 
 # Live demo
 
-Foodly is currently live at https://foodly-b4352.web.app/menu<br>
+Live preview and test: https://foodly-b4352.web.app/<br>
 <br>
 
 # Features
@@ -67,7 +67,7 @@ Foodly requires a few things to be done for the backend before you can run it in
 	<br>**Note:** Be sure to specify the `/build` folder as the folder to be deployed.
 	<br>**Note:** When it asks about redirecting all links to `/index.html`, select **Yes** because this is a single page application, and all content is loaded via JS, not via server requests to other .html files.
 	<br><br>If you messed this up during init, these options can also be set in the ***"hosting"*** options within the `firebase.json` file, which is created after running `firebase init`:
-	```javascript
+	```json
 	"hosting": {
 		"public": "build", // uploads files from /build during 'firebase deploy'
 		"rewrites": [ // rewrites links to always point to index.html
