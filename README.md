@@ -58,17 +58,17 @@ Foodly requires a few things to be done for the backend before you can run it in
 	```
 	Replace the values for the above two constants with your own values. This will connect all the `fetch()` requests done by Foodly (for fetching user orders, or logging users in, etc...) to your specific Firebase account.
 
-	* Your Realtime Database URL can be found in the realtime database section in the Firebase console. It might look something like this:<br>
+	* Your Realtime Database URL can be found in the realtime database section in the Firebase console. It will look something like this:<br>
 	```https://project-a1234-default-rtdb.firebaseio.com/```
-	* Your Api Key can be found in the project settings within the Firebase console.<br>
+	* Your Api Key can be found in the project settings within the Firebase console. It will look something like the below string:<br>
 	```BJavYvCKsWMoXsBqLl2ZED32iuV2Fz1W9iwubrX```
-	<br><br>
-5. In the Firebase console, enable the **Firebase Hostring** and follow the setup instructions. During the initialization step, there are a couple of settings you need to specify below:
+	
+5. In the Firebase console, enable the **Firebase Hosting** and follow the setup instructions. During the initialization step, there are a couple of settings you need to specify below:
 6. Initialize the project via `firebase init`
 	<br>**Note:** Be sure to specify the `/build` folder as the folder to be deployed.
 	<br>**Note:** When it asks about redirecting all links to `/index.html`, select **Yes** because this is a single page application, and all content is loaded via JS, not via server requests to other .html files.
 	<br><br>If you messed this up during init, these options can also be set in the ***"hosting"*** options within the `firebase.json` file, which is created after running `firebase init`:
-	```json
+	```javascript
 	"hosting": {
 		"public": "build", // uploads files from /build during 'firebase deploy'
 		"rewrites": [ // rewrites links to always point to index.html
