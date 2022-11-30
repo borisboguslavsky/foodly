@@ -52,12 +52,11 @@ const LoginForm = () => {
 
 			dispatch(authActions.login(result))
 			setSubmitSuccess(true)
-			setIsSubmitting(false);
 			// TODO: reset form
 		} catch(error){	
 			setSubmitError(error.message.replaceAll("_", " ").toLowerCase())
-			setIsSubmitting(false);
 		}
+		setIsSubmitting(false);
 	}
 
 	const formCss = `${classes.standardForm} ${classes.centeredForm}`

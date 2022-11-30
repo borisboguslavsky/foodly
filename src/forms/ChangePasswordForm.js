@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { changeUserPassword } from "../store/auth-actions";
 
@@ -9,9 +9,6 @@ import useTextInputField from "../hooks/useTextInputField";
 import classes from './StandardFormStyle.module.css'
 
 const ChangePasswordForm = () => {
-
-	const passwordChangeInputRef = useRef();
-	const passwordChangeConfirmInputRef = useRef();
 
 	const token = useSelector(state => state.auth.token)
 
@@ -60,7 +57,7 @@ const ChangePasswordForm = () => {
 		try {
 			let result = await changeUserPassword({
 				token: token,
-				newPassword: passwordChangeInputRef.current.value
+				newPassword: passValue
 			})
 			setSubmitSuccess(true);
 			passReset();

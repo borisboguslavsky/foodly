@@ -69,3 +69,22 @@ export const changeUserPassword = async ({
 		data.error.message : 'Failed to Fetch Orders'
 	throw new Error(errorMessage)
 }
+
+export const deleteOrderHistory = async ({
+	userId,
+	token
+}) => {
+	if (!userId) throw new Error('Missing userId in fetchOrders()')
+	if (!token) throw new Error('Missing token in fetchOrders()')
+
+	const requestURL = `${databaseUrl}/orders/user/${userId}.json?auth=${token}`
+
+	const response = await fetch(requestURL, {method: "DELETE" })
+	const data = await response.json();
+	// Response successfuly
+	if (response.ok) return data
+	// Some kind of error
+	let errorMessage = (data.error) ? 
+		data.error.message : 'Failed to Delete Orders'
+	throw new Error(errorMessage)
+}
