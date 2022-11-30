@@ -1,0 +1,17 @@
+.errorIcon {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex: 1
+}
+.errorIcon span {
+	font-size: 3rem;
+	margin: 0;
+	padding: 0;
+	color: var(--red);
+}
+.errorIcon p {
+	width: 100%;
+	text-align: center;
+}

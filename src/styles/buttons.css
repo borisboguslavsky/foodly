@@ -1,0 +1,35 @@
+.btnLight,
+.btnDark {
+	cursor: pointer;
+	border: 1px solid var(--red);
+  border-radius: var(--radius);
+	padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+	/* width: max-content; */
+}
+.btnLight {
+  background-color: var(--white);
+  color: var(--red);	
+}
+	.btnLight:hover {
+		background-color: var(--red);
+		color: white;
+	}
+.btnDark {
+  background-color: var(--red);
+  color: white;	
+	display: flex;
+	align-items: center;
+}
+	.btnDark:hover {
+		background-color: var(--red-dark);
+	}
+
+button:disabled,
+button:disabled:hover {
+	pointer-events: none;
+	border: 1px solid var(--disabled);
+	background-color: var(--disabled);
+	color: var(--text-disabled);
+	opacity: 0.75;
+}

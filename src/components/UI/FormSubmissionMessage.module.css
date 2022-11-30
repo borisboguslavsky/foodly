@@ -1,0 +1,9 @@
+.errorMessage,
+.successMessage {
+	text-transform: capitalize;
+	color: var(--red);
+	font-weight: bold;
+}
+.successMessage {
+	color: var(--success);
+}

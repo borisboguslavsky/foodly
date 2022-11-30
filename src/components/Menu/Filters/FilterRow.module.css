@@ -1,0 +1,20 @@
+.filterRow {
+	max-width: var(--max-width);
+	border-radius: var(--radius);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.625rem;
+	row-gap: 0.5rem;
+	/* overflow-x: scroll; */
+	border-radius: var(--radius);
+	margin-top: 0;
+	margin-bottom: 1rem;
+	padding-left: 0;
+  width: var(--width);
+	max-width: var(--max-width);
+	z-index: 1;
+}
+/* .filterRow::after {
+	content: '';
+	flex-grow: 100000000000;
+} */

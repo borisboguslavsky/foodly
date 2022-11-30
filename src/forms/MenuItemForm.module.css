@@ -1,0 +1,46 @@
+.menuItemForm {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+.menuItemForm div {
+	display: flex;
+	gap: 0.25rem;
+}
+.menuItemForm input {
+	margin: 0;
+	max-width: 3rem;
+	padding-left: 0.5rem !important;
+	padding-right: 0.5rem !important;
+	text-align: center;
+	pointer-events: none;
+	flex-grow: 0;
+}
+.menuItemForm button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.menuItemForm button span:nth-child(1) {
+	display: none;
+}
+@media (max-width: 600px) {
+	.menuItemForm {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.menuItemForm div {
+		flex-grow: 1;
+	}
+	.menuItemForm button {
+		flex-grow: 4;
+	}
+	.menuItemForm button span:nth-child(1) {
+		display: unset;
+	}
+	.menuItemForm button span:nth-child(2) {
+		display: none;
+	}
+}

@@ -1,0 +1,29 @@
+.footerContent {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: var(--width);
+	max-width: var(--max-width);
+}
+.footerContent ul {
+	margin: 0;
+	list-style: none;
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+.footerButton {
+	height: 47px;
+}
+.footerContent a,
+.footerContent a:visited {
+	color: white;
+	text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+	.footerButton button span:nth-child(2) {
+		display: none;
+	}
+}

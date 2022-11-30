@@ -1,0 +1,18 @@
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number] {
+	border: 1px solid var(--text-dark);
+  border-radius: var(--radius);
+	padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+}
+input[type=number] {
+	padding-right: 0.25rem;
+}
+
+input[type=text].error,
+input[type=email].error,
+input[type=password].error {
+	background-color: rgb(255, 203, 203);
+}

@@ -1,0 +1,116 @@
+{
+	"meals": [
+		{
+			"id": "meal1",
+			"name": "Biscuit Sandwich",
+			"category": "breakfast",
+			"image": "biscuit_sandwich.jpg",
+			"description": "The perfect way to start your day. A warm biscuit sandwich made with an eggs, bacon, cheese, and lettuce.",
+			"price": 6
+		},
+		{
+			"id": "meal2",
+			"name": "Blueberry Waffles",
+			"category": "breakfast",
+			"image": "blueberry_waffle.jpg",
+			"description": "Three blueberry waffles, served with maple syrup and a side of hash browns.",
+			"price": 12
+		},
+		{
+			"id": "meal3",
+			"name": "Coffee",
+			"category": "breakfast",
+			"image": "coffee.jpg",
+			"description": "Choose from our various gourmet coffee blends and get ready for the day. Free refills.",
+			"price": 4
+		},
+		{
+			"id": "meal4",
+			"name": "Buttery Crossaint",
+			"category": "breakfast",
+			"image": "crossaint.jpg",
+			"description": "Baked fresh every day, our crossaints have made this place famous. Buy two, get one free.",
+			"price": 3
+		},
+		{
+			"id": "meal5",
+			"name": "Pancakes",
+			"category": "breakfast",
+			"image": "pancakes.jpg",
+			"description": "Any place that serves breakfast ought to have pancakes, and we're no exception. Choose from plain, chocolate chip, buttermilk, or blueberry.",
+			"price": 14
+		},
+		{
+			"id": "meal6",
+			"name": "Chocolate Brownie",
+			"category": "dessert",
+			"image": "brownie.jpg",
+			"description": "A rich, chocolate brownie. A customer favorite for finishing out their meals.",
+			"price": 5
+		},
+		{
+			"id": "meal7",
+			"name": "Chocolate Cake",
+			"category": "dessert",
+			"image": "chocolate_cake.jpg",
+			"description": "A slice of chocolate cake. Free slice on your birthday!",
+			"price": 5
+		},
+		{
+			"id": "meal8",
+			"name": "Ice Cream",
+			"category": "dessert",
+			"image": "ice_cream.jpg",
+			"description": "One generous scoop of your choice of ice cream. Vanilla, chocolate, and strawberry available.",
+			"price": 8
+		},
+		{
+			"id": "meal9",
+			"name": "Strawberry Milkshake",
+			"category": "dessert",
+			"image": "strawberry_milkshake.jpg",
+			"description": "16oz milkshake made with fresh strawberries and real ice cream.",
+			"price": 7
+		},
+		{
+			"id": "meal10",
+			"name": "Fried Rice with Shrimp",
+			"category": "lunch_dinner",
+			"image": "fried_rice_with_shrimp.jpg",
+			"description": "Fried rice with jumbo shrimp, served with an eggroll.",
+			"price": 10
+		},
+		{
+			"id": "meal11",
+			"name": "Hamburger",
+			"category": "lunch_dinner",
+			"image": "hamburger.jpg",
+			"description": "1/2oz hamburger topped with lettuce, cheese, tomatoes, pickles, and our special in-house sauce.",
+			"price": 7
+		},
+		{
+			"id": "meal12",
+			"name": "Beef Noodle Soup",
+			"category": "lunch_dinner",
+			"image": "noodle_soup_with_beef.jpg",
+			"description": "Creamy, rich soup with generous portions of beef.",
+			"price": 11
+		},
+		{
+			"id": "meal13",
+			"name": "Pepperoni Pizza",
+			"category": "lunch_dinner",
+			"image": "pepperoni_pizza.jpg",
+			"description": "One slice of pepperoni pizza.",
+			"price": 5
+		},
+		{
+			"id": "meal14",
+			"name": "Sub Sandwich",
+			"category": "lunch_dinner",
+			"image": "sub_sandwich.jpg",
+			"description": "A sub sandwich on a freshly baked bun. Turkey, tomato, lettuce, and cheese.",
+			"price": 7
+		}
+	]
+}

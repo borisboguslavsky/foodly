@@ -1,0 +1,42 @@
+.card {
+  z-index: 2;
+  padding: 2rem;
+  box-shadow: var(--box-shadow-sm);
+  border-radius: var(--radius);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: var(--width);
+	max-width: var(--max-width);
+  overflow-x: hidden;
+}
+.card hr {
+  margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
+}
+.cardTitle {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-overflow: ellipsis;
+  /* word-break: break-word; */
+}
+.cardTitle h1 {
+  margin: 0;
+  padding: 0px;
+  width: fit-content;
+  flex-shrink: 10;
+  color: var(--red);
+  padding-bottom: 1rem;
+  text-overflow: ellipsis;
+}
+.cardTitle button {
+  width: fit-content;
+  flex-shrink: 0;
+}

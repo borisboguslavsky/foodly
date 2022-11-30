@@ -1,0 +1,57 @@
+.pastOrderItem {
+	border-radius: var(--radius);
+	border: 1px solid var(--red);
+	margin: 0;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	list-style: none;
+}
+.pastOrderItem.noCard {
+	border: none;
+	padding: 0;
+}
+.pastOrderItem button {
+	width: max-content;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.header span {
+	color: var(--red);
+}
+.pastOrderItem p, 
+.pastOrderItem h3 {
+	margin: 0;
+}
+.pastOrderItem ul {
+	list-style: none;
+	padding: 0;
+	margin-top: 0;
+}
+.details {
+	font-size: 11px;
+	font-style: italic;
+	text-align: right;
+	margin-top: 0.5rem;
+}
+.pastOrderItem label {
+	font-weight: bold;
+}
+.pastOrderItem hr {
+	border: none;
+	border-bottom: 1px solid grey;
+	margin: 0.5rem 0rem;
+}
+.orderTotal {
+	font-weight: bold;
+}
+.orderTotal span {
+	color: var(--red);
+}
+@media (max-width: 600px) {
+	.pastOrderItem button {
+		width: min-content;
+	}
+}

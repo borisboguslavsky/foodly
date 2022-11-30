@@ -1,0 +1,7 @@
+h2 span {
+	color: var(--red);
+}
+.accountPage ul {
+	padding: 0;
+	margin: 0;
+}

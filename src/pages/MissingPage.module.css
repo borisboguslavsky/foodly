@@ -1,0 +1,19 @@
+.missing {
+	flex-direction: column;
+	text-align: center;
+}
+.missing h1 {
+	text-align: center;
+	color: var(--red);
+	margin: 0;
+}
+.missing a {
+	text-decoration: none;
+	border-radius: var(--radius);
+	padding: 0.5rem 1rem;
+	background-color: var(--red);
+	color: var(--text-light);
+}
+.missing a:hover {
+	background-color: var(--red-dark);
+}

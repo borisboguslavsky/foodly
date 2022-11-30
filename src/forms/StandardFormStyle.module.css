@@ -1,0 +1,64 @@
+.standardForm {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+}
+.standardForm.centeredForm {
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+}
+.standardForm label {
+	font-size: var(--font-size-sm);
+	padding-bottom: 0.25rem;
+}
+.standardForm label:after {
+	content: ':'
+}
+.formInputWrapper {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+.standardForm input {
+	margin-bottom: 0.5rem;
+	flex-grow: 1;
+}
+.standardForm button {
+	margin-top: 0.5rem;
+	width: fit-content;
+}
+.standardForm button.textLinkButton {
+	background-color: transparent;
+	border: none;
+	font-size: var(--font-size-sm);
+	text-decoration: underline;
+	text-align: left;
+	padding: 0;
+	margin-top: 1rem;
+}
+.standardForm button.textLinkButton:hover {
+	cursor: pointer;
+	color: var(--red);
+}
+
+.formRow {
+	display: flex;
+	gap: 0.5rem;
+}
+.formRow input {
+	flex-grow: 1;
+}
+
+@media (max-width: 600px) {
+	.standardForm {
+		width: 100%;
+	}
+	.standardForm label {
+		text-align: left;
+	}
+	.formRow {
+		flex-direction: column;
+		gap: 0;
+	}
+}

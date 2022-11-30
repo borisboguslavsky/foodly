@@ -1,0 +1,24 @@
+.desktopNavList {
+  margin: 0;
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+}
+@media (min-width: 600px) {
+	.desktopNavList .navBtn_home,
+	.desktopNavList .navBtn_menu {
+		display: none;
+	}
+}
+@media (max-width: 600px) {
+  .desktopNavList li button span:nth-child(2) {
+    display: none;
+  }
+	
+	.desktopNavList .navBtn_home,
+	.desktopNavList .navBtn_login,
+	.desktopNavList .navBtn_account,
+	.desktopNavList .navBtn_logout {
+		display: none;
+	}
+}
