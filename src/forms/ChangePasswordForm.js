@@ -54,6 +54,9 @@ const ChangePasswordForm = () => {
 			return;
 		};
 		setIsSubmitting(true)
+		if (!window.confirm('Are you sure you want to change your password?')) {
+			return;
+		}
 		try {
 			let result = await changeUserPassword({
 				token: token,

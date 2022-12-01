@@ -67,7 +67,7 @@ const Account = () => {
 			className={classes.accountPage}
 		>
 			<h2>Account Settings ({email})</h2>
-			<p style={{marginTop: '0'}}>Change your account password, delete your order history, or delete your entire account.</p>
+			<p>Change your account password, delete your order history, or delete your entire account.</p>
 			<button
 				className="btnDark"
 				style={{width: "fit-content"}}
@@ -79,7 +79,18 @@ const Account = () => {
 			<h2>Order History:</h2>
 			{isLoading && <p>Fetching recent orders...</p>}
 			{fetchError && <p>{fetchError}</p>}
-			{Object.keys(orders).length === 0 && !isLoading && <p>No recent orders...</p>}
+			{Object.keys(orders).length === 0 && !isLoading && 
+				<>
+					<p>No recent orders...</p>
+					<button
+						className="btnDark"
+						style={{width: "fit-content"}}
+						onClick={() => {navigate('/menu')}}
+					>
+						View Menu ❯
+					</button>
+				</>
+			}
 			{Object.keys(orders).length > 0 && !isLoading && 
 				<ul>{parsedOrders.reverse()}</ul>
 			}

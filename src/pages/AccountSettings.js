@@ -34,6 +34,9 @@ const AccountSettings = () => {
 
 	const deleteOrderHistoryHandler = async () => {
 		setCurrentlyDeletingOrders(true)
+		if (!window.confirm('Are you sure you want to delete your order history?')) {
+			return;
+		}
 		try {
 			const result = await deleteOrderHistory({
 				userId: uid,
@@ -48,6 +51,9 @@ const AccountSettings = () => {
 
 	const deleteAccountHandler = async () => {
 		setCurrentlyDeletingAccount(true)
+		if (!window.confirm('Are you sure you want to delete your account?')) {
+			return;
+		}
 		try {
 			await deleteOrderHistoryHandler();
 			const result = await deleteAccount({
