@@ -1,4 +1,3 @@
-import { json } from "react-router-dom";
 import { firebaseApiKey, databaseUrl } from "../private-data";
 
 export const userLoginOrSignup = async ({

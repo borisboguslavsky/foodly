@@ -42,17 +42,15 @@ const LoginForm = () => {
 			})
 			const currentTime = new Date().getTime()
 			const expirationTime = new Date(new Date().getTime() + (result.expiresIn * 1000)).getTime();
-			result.expiresAt = expirationTime;
 
-			// TODO: Auto-logout not working for some reason
-			setTimeout(() => {
-				authActions.logout() // doesnt work
-				// console.log('AUTO LOGOUT') // this works
-			}, 3000)
-
-			dispatch(authActions.login(result))
+			// Auto logout after auth token expires
+			const logoutTimer = setTimeout(() => {
+				dispatch(authActions.logout())
+			}, expirationTime - currentTime)
+			// Store logout timer in the auth store
+			dispatch(authActions.setLogoutTimer(logoutTimer))
+			dispatch(authActions.login({...result, expirationTime: expirationTime}))
 			setSubmitSuccess(true)
-			// TODO: reset form
 		} catch(error){	
 			setSubmitError(error.message.replaceAll("_", " ").toLowerCase())
 		}

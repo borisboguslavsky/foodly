@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/cart-slice";
 import LoadingSpinner from "../../UI/LoadingSpinner";
 
@@ -9,14 +7,10 @@ import classes from "./MenuItem.module.css";
 import MenuItemForm from "../../../forms/MenuItemForm";
 
 const MenuItem = (props) => {
+	
 	const dispatch = useDispatch();
 
 	const price = `$${props.price.toFixed(2)}`;
-  
-	const [imagesLoaded, setImagesLoaded] = useState(true);
-	// useEffect(() => {
-	//   setTimeout(() => { setImagesLoaded(true) }, 600)
-	// }, [])
 
 	const addToCartHandler = (amount) => {
 		dispatch(
@@ -33,9 +27,7 @@ const MenuItem = (props) => {
 	return (
 		<li className={classes.meal}>
 			<div className={classes.image}>
-				{imagesLoaded &&
-          <img src={`meals/${props.category}/${props.image}`} loading="lazy" />
-        }
+				<img src={`meals/${props.category}/${props.image}`} loading="lazy" />
 				<LoadingSpinner
 					color="white"
 					thickness="3px"

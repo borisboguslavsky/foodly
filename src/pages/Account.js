@@ -50,7 +50,6 @@ const Account = () => {
 			setIsLoading(true)
 			try {
 				const orderData = await fetchOrders({userId: uid, token: token}) 
-				console.log(orderData)
 				dispatch(authActions.setUserOrders(orderData))
 			} catch(error) {
 				dispatch(authActions.setUserOrders({}))
@@ -66,8 +65,6 @@ const Account = () => {
 		<Card 
 			title={`Welcome`}
 			className={classes.accountPage}
-			// buttonText="Settings ❯"
-			// buttonClickHandler={() => {navigate('/settings')}}
 		>
 			<h2>Account Settings ({email})</h2>
 			<p style={{marginTop: '0'}}>Change your account password, delete your order history, or delete your entire account.</p>
